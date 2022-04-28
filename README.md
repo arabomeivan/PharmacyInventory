@@ -1,0 +1,2 @@
+# PharmacyInventory
+A JavaScript Application
