@@ -1,4 +1,3 @@
-# Landing page Workflow
 
 # Index Page Workflow
 In this HTML file, the user can perform 4 functionalities: add, delete, display, and modify.
