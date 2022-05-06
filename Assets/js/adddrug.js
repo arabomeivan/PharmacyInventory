@@ -1,6 +1,6 @@
 /*get the button element using a regular event listener to add values to an array*/
 
-const add = document.getElementById('addme')
+const add = document.getElementById('add')
 
 /*the array for storing the objects that is the drug details*/
 let drugs =[]
@@ -13,8 +13,14 @@ add.addEventListener('click', (e)=>
 
     let drugdetails = 
     {
-        drugname: document.getElementById('name').value,
-        drugid: document.getElementById('drugid').value
+        
+        drugid: document.getElementById('drugid').value,
+        drugname: document.getElementById('drugname').value,
+        drugtype: document.getElementById('type').value,
+        route: document.getElementById('route').value,
+        expirydate: document.getElementById('expirydate').value,
+        company: document.getElementById('company').value
+
 
     }
 
@@ -30,7 +36,7 @@ add.addEventListener('click', (e)=>
     /**Displays  */
     drugs.forEach(drug => {
 
-        render += "<p>" + drug.drugname + " (" + drug.drugid + ")</p>";
+        render += "<p>" + drug.drugid + drug.drugname + drug.drugtype + drug.route + drug.expirydate + drug.company +"</p>";
     });
 
     divdisplay.innerHTML = render;
@@ -40,8 +46,4 @@ add.addEventListener('click', (e)=>
 
 /**another button to display the details in a div */
 
-const display = document.getElementById('display')
 const divdisplay = document.getElementById('displayingdrugs')
-
-
-/**event that happens when button to display drg details is clicked in a div*/

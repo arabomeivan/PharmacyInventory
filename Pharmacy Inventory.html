@@ -56,8 +56,54 @@
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">Add Drug Details to Storage</h6>
                             <form>
-                                
-                            </form>
+                                <div class="row mb-3">
+                                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Drug Id</label>
+                                    <div class="col-sm-10">
+                                      <input type="text" id="drugid" class="form-control form-control-sm">
+                                    </div>
+                                </div>
+    
+                                    <div class="row mb-3">
+                                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Drug Name</label>
+                                        <div class="col-sm-10">
+                                          <input type="text" class="form-control form-control-sm" id="drugname">
+                                        </div>
+                                    </div>
+    
+                                        <div class="row mb-3">
+                                            <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Type</label>
+                                            <div class="col-sm-10">
+                                              <input type="text" class="form-control form-control-sm" id="type">
+                                            </div>
+                                        </div>
+    
+                                            <div class="row mb-3">
+                                                <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Route</label>
+                                                <div class="col-sm-10">
+                                                  <input type="text" class="form-control form-control-sm" id="route">
+                                                </div>
+                                            </div>
+    
+                                                <div class="row mb-3">
+                                                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Expriy Date</label>
+                                                    <div class="col-sm-10">
+                                                      <input type="text" class="form-control form-control-sm" id="expirydate">
+                                                    </div>
+                                                </div>
+
+
+    
+                                                            <div class="row mb-3">
+                                                            <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Production Company</label>
+                                                            <div class="col-sm-10">
+                                                              <input type="text" class="form-control form-control-sm" id="company">
+                                                            </div>
+                                                        </div>
+                                                            <div class="row submitbtn">
+                                                                <button id="add" class="btn btn-primary">Add Drug</button>
+                                                            </div>
+                                                   
+                                                </form>
                         </div>
                     </div>
 
@@ -66,6 +112,29 @@
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">Available Drugs</h6>
                             
+                            <table class="table" id="displayingdrugs">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Drug ID</th>
+                                    <th scope="col">Drug Name</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Route</th>
+                                    <th scope="col">Expriy Date</th>
+                                    <th scope="col">Production Company</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    
+                                  </tr>
+                                  <tr>
+                                    
+                                  </tr>
+                                  <tr>
+                                    
+                                  </tr>
+                                </tbody>
+                              </table>
                         </div>
                     </div>
 
@@ -131,6 +200,7 @@
 
     <!-- Template Javascript -->
     <script src="Assets/js/main.js"></script>
+    <script src="Assets/js/adddrug.js"></script>
     
 </body>
 
