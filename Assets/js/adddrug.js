@@ -6,43 +6,69 @@ const add = document.getElementById('add')
 let drugs =[]
 
 
-/**on click of this button, this event runs whereby it collects the values in the field and creates an object */
-add.addEventListener('click', (e)=>
-{
-    /**create the object */
 
-    let drugdetails = 
-    {
-        
-        drugid: document.getElementById('drugid').value,
-        drugname: document.getElementById('drugname').value,
-        drugtype: document.getElementById('type').value,
-        route: document.getElementById('route').value,
-        expirydate: document.getElementById('expirydate').value,
-        company: document.getElementById('company').value
+/**variables to validate the forms if empty an alert will be thrown if not */
+  
 
-
-    }
-
-    /**pushes the object to be saved in the array */
-    drugs.push(drugdetails)
-    console.log('Just addded a drug', {drugs})
-    /**to clear the from */
-    document.querySelector('form').reset()
-    e.preventDefault()
-    let render = "";
 
     
-    /**Displays  */
-    drugs.forEach(drug => {
 
-        render += "<p>" + drug.drugid + drug.drugname + drug.drugtype + drug.route + drug.expirydate + drug.company +"</p>";
-    });
+    /**when button is clicked and if fiedls are empty an alert will be thrown */
+        add.addEventListener('click', (e)=>
+        {
+            let a = document.getElementById('drugid').value
+            let b = document.getElementById('drugname').value
+            let c = document.getElementById('type').value
+            let d = document.getElementById('route').value
+            let x = document.getElementById('expirydate').value
+            let f = document.getElementById('company').value
 
-    divdisplay.innerHTML = render;
-}
+            /**if condition throwing alert if feilds are empty */
+            if(a==""||b==""||c==""||d==""||x==""||f=="")
+            {
+                alert('Fields are empty')
+            }
+              
+                  /**create the object */
+        
+        else{
+            let drugdetails = 
+            {
+                
+                drugid: document.getElementById('drugid').value,
+                drugname: document.getElementById('drugname').value,
+                drugtype: document.getElementById('type').value,
+                route: document.getElementById('route').value,
+                expirydate: document.getElementById('expirydate').value,
+                company: document.getElementById('company').value
+            }
+        
+            /**pushes the object to be saved in the array */
+            drugs.push(drugdetails)
+            console.log('Just addded a drug', {drugs})
 
-);
+            /**to clear the from */
+
+           
+
+            e.preventDefault()
+            let render = "";
+        
+            
+            /**Displays  */
+            drugs.forEach(drug => {
+                render += "<tr>" + "<td>" + drug.drugid + "</td>" + "<td>" + drug.drugname + "</td>" + "<td>" + drug.drugtype + "</td>" + "<td>"+ drug.route +"</td>" + "<td>"+ drug.expirydate +"</td>" + "<td>"+ drug.company + "</td>"+ "<td>" +"<button class='btn btn-primary'>Delete" + "</button>" + "</td>" + "</tr>"
+            });
+        
+            divdisplay.innerHTML = render;
+
+              }  
+        }
+        );
+    
+
+/**on click of this button, this event runs whereby it collects the values in the field and creates an object */
+
 
 /**another button to display the details in a div */
 
