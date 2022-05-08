@@ -7,6 +7,8 @@
     /*the array for storing the objects that is the drug details*/
     let drugs =[]
     let drugdetails ={}
+    let getdetails= JSON.parse(localStorage.getItem('Druglist'))
+    console.log(getdetails[0].drugid)
 
 
 
@@ -33,9 +35,15 @@
             /**converting the local storage druglist and storing it in variable get details so it's values can be used */
             
             
-             
+             /**to validate a user not entering the same drug id */
+             if(a===getdetails[0].drugid)
+             {
+                 alert ('Drug Id has been inserted already')
+             }
+
+
             /**if condition throwing alert if feilds are empty */
-            if(a==""||b==""||c==""||d==""||x==""||f=="")
+            else if(a==""||b==""||c==""||d==""||x==""||f=="")
             {
                 alert('Fields are empty')
             }   
@@ -85,18 +93,11 @@
             divdisplay.innerHTML = render;
             /**Saving to local storage */
             localStorage.setItem('Druglist', JSON.stringify(drugs));
-
-            let getdetails= JSON.parse(localStorage.getItem('Druglist'))
-            console.log(getdetails[0].drugid)
-
-
           }
 
-              /**to validate a user not entering the same drug id */
-             if(a===getdetails[0].drugid)
-             {
-                 alert ('Drug Id has been inserted already')
-             }
+            
+
+              
               
                 
         }
