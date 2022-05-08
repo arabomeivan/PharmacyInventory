@@ -33,7 +33,7 @@
             /**converting the local storage druglist and storing it in variable get details so it's values can be used */
             
             let getdetails= JSON.parse(localStorage.getItem('Druglist'))
-            console.log(getdetails[0].drugid)
+            
              
             /**if condition throwing alert if feilds are empty */
             if(a==""||b==""||c==""||d==""||x==""||f=="")
@@ -48,7 +48,7 @@
                  alert ('Drug Id has been inserted already')
              }
 
-             
+
             /**creates the object if fields are not discovered empty */
             else{
                    
