@@ -8,7 +8,7 @@
     let drugs =[]
     let drugdetails ={}
     let getdetails= JSON.parse(localStorage.getItem('Druglist'))
-    console.log(getdetails[0].drugid)
+   
 
 
 
