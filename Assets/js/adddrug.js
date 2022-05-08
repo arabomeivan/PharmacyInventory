@@ -90,8 +90,7 @@
             console.log(getdetails[0].drugid)
 
 
-
-              }
+          }
 
               /**to validate a user not entering the same drug id */
              if(a===getdetails[0].drugid)
