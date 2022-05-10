@@ -1,119 +1,91 @@
+/*get the button element using a regular event listener to add values to the local storage*/
+const add = document.getElementById('add')
+
+/*the array for storing the objects that is the drug details*/
+let drugs = []
+
+/**objects being used */
+let drugdetails = {}
+
+/**when button is clicked verification and validation is done */
+add.addEventListener('click', (e) => {
+
+    /**getting values from all textfields for validation*/
+    let a = document.getElementById('drugid').value
+    let b = document.getElementById('drugname').value
+    let c = document.getElementById('type').value
+    let d = document.getElementById('route').value
+    let x = document.getElementById('expirydate').value
+    let f = document.getElementById('company').value
 
 
-    /*get the button element using a regular event listener to add values to an array*/
+    /**if condition throwing alert if feilds are empty */
+    if (a == "" || b == "" || c == "" || d == "" || x == "" || f == "") {
+        alert('Fields are empty')
 
-    const add = document.getElementById('add')
+    }
 
-    /*the array for storing the objects that is the drug details*/
-    let drugs =[]
-    let drugdetails ={}
-    let getdetails= JSON.parse(localStorage.getItem('Druglist'))
-   
-
+    /** if text fields are not empty collect the values and store them as objects*/
+    else {
 
 
+    /**create objects*/
+        drugdetails = {
 
-  
-
-
-    
-
-    /**when button is clicked and if fiedls are empty an alert will be thrown */
-        add.addEventListener('click', (e)=>
-        {
-            /**variables to validate the forms if empty an alert will be thrown if not */
-            let a = document.getElementById('drugid').value
-            let b = document.getElementById('drugname').value
-            let c = document.getElementById('type').value
-            let d = document.getElementById('route').value
-            let x = document.getElementById('expirydate').value
-            let f = document.getElementById('company').value
-
-           
-
-            
-            /**converting the local storage druglist and storing it in variable get details so it's values can be used */
-            
-            
-             /**to validate a user not entering the same drug id */
-             if(a===getdetails[0].drugid)
-             {
-                 alert ('Drug Id has been inserted already')
-             }
-
-
-            /**if condition throwing alert if feilds are empty */
-            else if(a==""||b==""||c==""||d==""||x==""||f=="")
-            {
-                alert('Fields are empty')
-            }   
-            
-            
-             
-
-             
-            /**creates the object if fields are not discovered empty */
-            else{
-                   
-            drugdetails = 
-            {
-                
-                drugid: document.getElementById('drugid').value,
-                drugname: document.getElementById('drugname').value,
-                drugtype: document.getElementById('type').value,
-                route: document.getElementById('route').value,
-                expirydate: document.getElementById('expirydate').value,
-                company: document.getElementById('company').value
-            }
-            
-        
-            /**pushes the object to be saved in the array */
-            drugs.push(drugdetails)
-            /**to clear the from */
-            document.forms[0].reset();
-            console.log('Just addded a drug', {drugs})
-
-            
-           /**Delete drug from the property */
-
-           let del = document.getElementById
-
-            e.preventDefault()
-            let render = "";
-        
-            
-            /**Displays  */
-            drugs.forEach(drug => {
-                render += "<tr>" + "<td>" + drug.drugid + "</td>" + "<td>" + drug.drugname + "</td>" + "<td>" + drug.drugtype + "</td>" + "<td>"+ drug.route +"</td>" + "<td>"+ drug.expirydate +"</td>" + "<td>"+ drug.company + "</td>"+ "<td>" +"<button class='btn btn-primary'>Delete" + "</button>" + "</td>" + "</tr>"
-            });
-
-            
-            const divdisplay = document.getElementById('displayingdrugs')
-
-            divdisplay.innerHTML = render;
-            /**Saving to local storage */
-            localStorage.setItem('Druglist', JSON.stringify(drugs));
-          }
-
-            
-
-              
-              
-                
+            drugid: document.getElementById('drugid').value,
+            drugname: document.getElementById('drugname').value,
+            drugtype: document.getElementById('type').value,
+            route: document.getElementById('route').value,
+            expirydate: document.getElementById('expirydate').value,
+            company: document.getElementById('company').value
         }
-        );
-    
+
+        /**Now if the object are not empty push to local storage*/
+        if (drugdetails != null) 
+        {
+            /**converts the local storage back into readeable data */
+            let getdetails = JSON.parse(localStorage.getItem('Druglist'))
+
+            /**Validation for checking if drug id is in the local storage */
+            if (a == getdetails[0].drugid) {
+                alert('Drug ID has been used')
+            } 
             
+            /**it's not used push to local storage and di */
+            else 
+            {
+                /**pushes the object to be saved in the array */
+                drugs.push(drugdetails)
 
-/**let del = document.getElementById(drugs.indexOf(drug))
+                /**to clear the from */
+                document.forms[0].reset();
+                console.log('Just addded a drug', {
+                    drugs
+                })
 
-del.addEventListener('click', (e)=>
-{
-    drugs.splice(drugs.indexOf(drug))
-   
-});**/
+                /**Saving to local storage */
+                localStorage.setItem('Druglist', JSON.stringify(drugs));
 
-/**on click of this button, this event runs whereby it collects the values in the field and creates an object */
+                /**Displays  */
+                let render = "";
+                drugs.forEach(drug => {
+                render += "<tr>" + "<td>" + drug.drugid + "</td>" + "<td>" + drug.drugname + "</td>" + "<td>" + drug.drugtype + "</td>" + "<td>" + drug.route + "</td>" + "<td>" + drug.expirydate + "</td>" + "<td>" + drug.company + "</td>" + "<td>" + "<button class='btn btn-primary'>Delete" + "</button>" + "</td>" + "</tr>"
 
+                });
 
-/**another button to display the details in a div */
+            }
+
+            let render = "";
+            drugs.forEach(drug => {
+            render += "<tr>" + "<td>" + drug.drugid + "</td>" + "<td>" + drug.drugname + "</td>" + "<td>" + drug.drugtype + "</td>" + "<td>" + drug.route + "</td>" + "<td>" + drug.expirydate + "</td>" + "<td>" + drug.company + "</td>" + "<td>" + "<button class='btn btn-primary'>Delete" + "</button>" + "</td>" + "</tr>"
+
+            });
+            const divdisplay = document.getElementById('displayingdrugs')
+            divdisplay.innerHTML = render;
+
+        }
+
+    }
+
+    e.preventDefault()
+});
