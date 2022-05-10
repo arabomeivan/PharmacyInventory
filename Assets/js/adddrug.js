@@ -45,12 +45,42 @@ add.addEventListener('click', (e) => {
         {
             /**converts the local storage back into readeable data */
             let getdetails = JSON.parse(localStorage.getItem('Druglist'))
+            if (getdetails == null) {
+                getdetails = [];
+            }
 
-            /**Validation for checking if drug id is in the local storage */
-            if (a == getdetails[0].drugid) {
-                alert('Drug ID has been used')
+            if (getdetails.length >= 1) {
+                /**Validation for checking if drug id is in the local storage */
+
+
+                if (a == getdetails[0].drugid) 
+                {
+                    alert('Drug ID has been used')
+                }
+                
+                else 
+                {
+                    /**pushes the object to be saved in the array */
+                    drugs.push(drugdetails)
+
+                    /**to clear the from */
+                    document.forms[0].reset();
+                    console.log('Just addded a drug', {
+                        drugs
+                    })
+
+                    /**Saving to local storage */
+                    localStorage.setItem('Druglist', JSON.stringify(drugs));
+
+                    /**Displays  */
+                    let render = "";
+                    drugs.forEach(drug => {
+                    render += "<tr>" + "<td>" + drug.drugid + "</td>" + "<td>" + drug.drugname + "</td>" + "<td>" + drug.drugtype + "</td>" + "<td>" + drug.route + "</td>" + "<td>" + drug.expirydate + "</td>" + "<td>" + drug.company + "</td>" + "<td>" + "<button class='btn btn-primary'>Delete" + "</button>" + "</td>" + "</tr>"
+
+                    });
+
+                }
             } 
-            
             /**it's not used push to local storage and di */
             else 
             {
