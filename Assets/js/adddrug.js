@@ -80,7 +80,6 @@ add.addEventListener('click', (e) => {
                     });
 
                 }
-                break
                  }
                 
 
