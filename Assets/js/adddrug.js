@@ -52,7 +52,7 @@ add.addEventListener('click', (e) => {
             if (getdetails.length >= 1) { 
                 /**Validation for checking if drug id is in the local storage */
                 /**using for loop to be checking every index in the local storage to check if the ID exists */
-                 for(i=0; i>=0; i++)
+                 for(i=0; i>=getdetails.length; i++)
                  {
                     if (a == getdetails[i].drugid) 
                     {
