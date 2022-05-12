@@ -49,16 +49,16 @@ add.addEventListener('click', (e) => {
                 getdetails = [];
             }
 
-            if (getdetails.length >= 1) {
+            if (getdetails.length >= 1) { 
                 /**Validation for checking if drug id is in the local storage */
-
-
-                if (a == getdetails[0].drugid) 
-                {
-                    alert('Drug ID has been used')
-                }
-                
-                else 
+                /**using for loop to be checking every index in the local storage to check if the ID exists */
+                 for(i=0; i>=0; i++)
+                 {
+                    if (a == getdetails[i].drugid) 
+                    {
+                        alert('Drug ID has been used')
+                    }
+                    else 
                 {
                     /**pushes the object to be saved in the array */
                     drugs.push(drugdetails)
@@ -80,8 +80,13 @@ add.addEventListener('click', (e) => {
                     });
 
                 }
+                break
+                 }
+                
+
+                
             } 
-            /**it's not used push to local storage and di */
+            /**it's not used push to local storage*/
             else 
             {
                 /**pushes the object to be saved in the array */
