@@ -11,16 +11,16 @@ let drugdetails = {}
 add.addEventListener('click', (e) => {
 
     /**getting values from all textfields for validation*/
-    let a = document.getElementById('drugid').value
-    let b = document.getElementById('drugname').value
-    let c = document.getElementById('type').value
-    let d = document.getElementById('route').value
-    let x = document.getElementById('expirydate').value
-    let f = document.getElementById('company').value
-
+    let id = document.getElementById('drugid').value
+    let name = document.getElementById('drugname').value
+    let type = document.getElementById('type').value
+    let route = document.getElementById('route').value
+    let productiondate = document.getElementById('productiondate').value
+    let expirydate = document.getElementById('expirydate').value
+    let company = document.getElementById('company').value
 
     /**if condition throwing alert if feilds are empty */
-    if (a == "" || b == "" || c == "" || d == "" || x == "" || f == "") {
+    if (id == "" || name == "" || type == "" || route == "" || expirydate == "" || company == "" || productiondate == "") {
         alert('Fields are empty')
 
     }
@@ -36,6 +36,7 @@ add.addEventListener('click', (e) => {
             drugname: document.getElementById('drugname').value,
             drugtype: document.getElementById('type').value,
             route: document.getElementById('route').value,
+            productiondate: document.getElementById('productiondate').value,
             expirydate: document.getElementById('expirydate').value,
             company: document.getElementById('company').value
         }
@@ -56,7 +57,7 @@ add.addEventListener('click', (e) => {
                 let found = false;
                  for(i=0; i< getdetails.length; i++)
                  {
-                    if (a == getdetails[i].drugid) 
+                    if (id == getdetails[i].drugid) 
                     {
                         found = true;
                     }
@@ -83,7 +84,7 @@ add.addEventListener('click', (e) => {
                     /**Displays  */
                     let render = "";
                     drugs.forEach(drug => {
-                    render += "<tr>" + "<td>" + drug.drugid + "</td>" + "<td>" + drug.drugname + "</td>" + "<td>" + drug.drugtype + "</td>" + "<td>" + drug.route + "</td>" + "<td>" + drug.expirydate + "</td>" + "<td>" + drug.company + "</td>" + "<td>" + "<button class='btn btn-primary'>Delete" + "</button>" + "</td>" + "</tr>"
+                    render += "<tr>" + "<td>" + drug.drugid + "</td>" + "<td>" + drug.drugname + "</td>" + "<td>" + drug.drugtype + "</td>" + "<td>" + drug.route + "</td>" + "<td>" + drug.expirydate + "</td>" + "<td>" + drug.company + "</td>" + "<td>" + "<button class='btn btn-primary delete-btn'>Delete" + "</button>" + "</td>" + "</tr>"
 
                     });
                  }
@@ -109,7 +110,7 @@ add.addEventListener('click', (e) => {
                 /**Displays  */
                 let render = "";
                 drugs.forEach(drug => {
-                render += "<tr>" + "<td>" + drug.drugid + "</td>" + "<td>" + drug.drugname + "</td>" + "<td>" + drug.drugtype + "</td>" + "<td>" + drug.route + "</td>" + "<td>" + drug.expirydate + "</td>" + "<td>" + drug.company + "</td>" + "<td>" + "<button class='btn btn-primary'>Delete" + "</button>" + "</td>" + "</tr>"
+                render += "<tr>" + "<td>" + drug.drugid + "</td>" + "<td>" + drug.drugname + "</td>" + "<td>" + drug.drugtype + "</td>" + "<td>" + drug.route + "</td>" + "<td>" + drug.expirydate + "</td>" + "<td>" + drug.company + "</td>" + "<td>" + "<button class='btn btn-primary delete-btn'>Delete" + "</button>" + "</td>" + "</tr>"
 
                 });
 
@@ -117,7 +118,7 @@ add.addEventListener('click', (e) => {
 
             let render = "";
             drugs.forEach(drug => {
-            render += "<tr>" + "<td>" + drug.drugid + "</td>" + "<td>" + drug.drugname + "</td>" + "<td>" + drug.drugtype + "</td>" + "<td>" + drug.route + "</td>" + "<td>" + drug.expirydate + "</td>" + "<td>" + drug.company + "</td>" + "<td>" + "<button class='btn btn-primary'>Delete" + "</button>" + "</td>" + "</tr>"
+            render += "<tr>" + "<td>" + drug.drugid + "</td>" + "<td>" + drug.drugname + "</td>" + "<td>" + drug.drugtype + "</td>" + "<td>" + drug.route + "</td>" + "<td>" + drug.productiondate + "</td>" +"<td>" + drug.expirydate + "</td>" + "<td>" + drug.company + "</td>" + "<td>" + "<button class='btn btn-primary delete-btn'>Delete" + "</button>" + "</td>" + "</tr>"
 
             });
             const divdisplay = document.getElementById('displayingdrugs')
@@ -128,4 +129,8 @@ add.addEventListener('click', (e) => {
     }
 
     e.preventDefault()
+
+    
 });
+let deleteelement = document.getElementsByClassName('delete-btn');
+

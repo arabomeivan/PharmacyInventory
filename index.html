@@ -11,6 +11,9 @@
     <!-- Favicon -->
     <link href="" rel="icon">
 
+    <!-- Vanilla Datepicker CSS -->
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.4/dist/css/datepicker.min.css'>
+
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,8 +43,6 @@
         <!-- Spinner End -->
 
 
-        
-
         <!-- Content Start -->
         <div class="content">
 
@@ -50,63 +51,95 @@
                 <div class="row g-4">
                     
                     <!--Form to input drug details to be saved-->
-                    <div class="col-sm-12 col-xl-6">
+                    <div class="col-sm-12 col-xl-6 adddetails">
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">Add Drug Details to Storage</h6>
                             <form>
                                 <div class="row mb-3">
-                                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Drug Id</label>
-                                    <div class="col-sm-10">
-                                      <input type="text" id="drugid" class="form-control form-control-sm">
-                                    </div>
+                                    <div class="input-group mb-3">
+                                        <input type="text" class="form-control ll" placeholder="Drug ID" aria-label="DrugId" aria-describedby="basic-addon2" id="drugid">
+                                      </div>
                                 </div>
     
                                     <div class="row mb-3">
-                                        <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Drug Name</label>
-                                        <div class="col-sm-10">
-                                          <input type="text" class="form-control form-control-sm" id="drugname">
-                                        </div>
+                                        <div class="input-group mb-3">
+                                            <input type="text" class="form-control ll" placeholder="Drug Name" aria-label="Drug Name" aria-describedby="basic-addon2" id="drugname">
+                                          </div>
                                     </div>
     
                                         <div class="row mb-3">
-                                            <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Type</label>
-                                            <div class="col-sm-10">
-                                              <input type="text" class="form-control form-control-sm" id="type">
+                                            <div class="input-group mb-4">
+                                                <select class="form-select" aria-label="Default select example" id="type">
+                                                    <option selected >Form of medication</option>
+                                                    <option value="Aqueous Solution">Aqueous Solution</option>
+                                                    <option value="Capsule">Capsule</option>
+                                                    <option value="Caplet">Caplet</option>
+                                                    <option value="Emulsion">Emulsion</option>
+                                                    <option value="Lotion">Lotion</option>
+                                                    <option value="Ointment">Ointment</option>
+                                                    <option value="Paste">Paste</option>
+                                                    <option value="Pill">Pill</option>
+                                                    <option value="Powder">Powder</option>
+                                                    <option value="Syrup">Syrup</option>
+                                                    <option value="Spirit">Spirit</option>
+                                                    <option value="Tablet">Tablet</option>
+                                                  </select>
                                             </div>
+                                            
                                         </div>
+                                        
     
                                             <div class="row mb-3">
-                                                <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Route</label>
-                                                <div class="col-sm-10">
-                                                  <input type="text" class="form-control form-control-sm" id="route">
+                                                <div class="input-group mb-4">
+                                                    <select class="form-select" aria-label="Default select example" id="route">
+                                                        <option selected >Route of Drug Administration</option>
+                                                        <option value="Oral Route">Oral Route</option>
+                                                        <option value="Sublingual Route">Sublingual Route</option>
+                                                        <option value="Buccal Route">Buccal Route</option>
+                                                        <option value="Inhalation Route">Inhalation Route</option>
+                                                        <option value="Nasal Route Route">Nasal Route Route</option>
+                                                        <option value="Rectal Route">Rectal Route</option>
+                                                        <option value="Vaginal Route">Vaginal Route</option>
+                                                        <option value="Cutaneous Route">Cutaneous Route</option>
+                                                        <option value="Otic Route">Otic Route</option>
+                                                        <option value="Transdermal Route">Transdermal Route</option>
+                                                        
+                                                      </select>
+
                                                 </div>
+                                                
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="input-group mb-4">
+                                                    <i class="bi bi-calendar-date input-group-text"></i>
+                                                    <input type="text" id="productiondate" class="datepicker_input form-control" placeholder="Production Date" required aria-label="Date input 3 (using aria-label)">
+                                                  </div>
                                             </div>
     
                                                 <div class="row mb-3">
-                                                    <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Expriy Date</label>
-                                                    <div class="col-sm-10">
-                                                      <input type="text" class="form-control form-control-sm" id="expirydate">
-                                                    </div>
+                                                   <div class="input-group mb-4">
+                                                    <i class="bi bi-calendar-date input-group-text"></i>
+                                                    <input type="text" id="expirydate" class="datepicker_input form-control" placeholder="Expriy Date" required aria-label="Date input 3 (using aria-label)">
+                                                  </div>
                                                 </div>
 
+                                                    <div class="row mb-3">
+                                                        <div class="input-group mb-3">
+                                                        <input type="text" class="form-control ll" placeholder="Production Company" aria-label="Production Company" aria-describedby="basic-addon2" id="company">
+                                                    </div>
+                                                    </div>
 
-    
-                                                            <div class="row mb-3">
-                                                            <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Production Company</label>
-                                                            <div class="col-sm-10">
-                                                              <input type="text" class="form-control form-control-sm" id="company">
-                                                            </div>
-                                                        </div>
-                                                            <div class="row submitbtn">
-                                                                <button type="button" id="add" class="btn btn-primary">Add Drug</button>
-                                                            </div>
+                                                    <div class="row submitbtn">
+                                                    <button type="button" id="add" class="btn btn-primary">Add Drug
+                                                    </button>
+                                                    </div>
                                                    
                                                 </form>
                         </div>
                     </div>
 
                     <!--div tag to display the list of available-->
-                    <div class="col-sm-12 col-xl-6">
+                    <div class="col-sm-12 col-xl-6 displayavailable">
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">Available Drugs</h6>
                             
@@ -117,6 +150,7 @@
                                     <th scope="col">Drug Name</th>
                                     <th scope="col">Type</th>
                                     <th scope="col">Route</th>
+                                    <th scope="col">Production Date</th>
                                     <th scope="col">Expriy Date</th>
                                     <th scope="col">Production Company</th>
                                     <th scope="col">Function</th>
@@ -134,7 +168,7 @@
                         <div class="bg-light rounded h-100 p-4">
                             <h6 class="mb-4">Dispatch Drugs To Patients</h6>
                             
-                            
+                            <button type="button" id="delete" class="btn btn-primary">delete</button>
                             
                             
                         </div>
@@ -185,7 +219,33 @@
     <!-- Javascript -->
     <script src="Assets/js/main.js"></script>
     <script src="Assets/js/adddrug.js"></script>
-    
+    <!-- Vanilla Datepicker JS -->
+<script src='https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.4/dist/js/datepicker-full.min.js'></script>
+
+<script>
+/* Bootstrap 5 JS included */
+/* vanillajs-datepicker 1.1.4 JS included */
+
+const getDatePickerTitle = elem => {
+  // From the label or the aria-label
+  const label = elem.nextElementSibling;
+  let titleText = '';
+  if (label && label.tagName === 'LABEL') {
+    titleText = label.textContent;
+  } else {
+    titleText = elem.getAttribute('aria-label') || '';
+  }
+  return titleText;
+}
+
+const elems = document.querySelectorAll('.datepicker_input');
+for (const elem of elems) {
+  const datepicker = new Datepicker(elem, {
+    'format': 'dd/mm/yyyy', // UK format
+    title: getDatePickerTitle(elem)
+  });
+}      
+</script>
 </body>
 
 </html>

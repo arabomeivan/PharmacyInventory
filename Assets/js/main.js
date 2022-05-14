@@ -155,6 +155,7 @@
             responsive: true
         }
     });
+    
 
 
     // Pie Chart
