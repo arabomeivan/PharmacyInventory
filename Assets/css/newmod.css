@@ -1,0 +1,21 @@
+.text-center
+{
+     width: 75%;
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: 4% ;
+}
+
+.table
+{
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.addbtn
+{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}

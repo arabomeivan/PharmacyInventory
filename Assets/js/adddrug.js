@@ -118,7 +118,7 @@ add.addEventListener('click', (e) => {
 
             let render = "";
             drugs.forEach(drug => {
-            render += "<tr>" + "<td>" + drug.drugid + "</td>" + "<td>" + drug.drugname + "</td>" + "<td>" + drug.drugtype + "</td>" + "<td>" + drug.route + "</td>" + "<td>" + drug.productiondate + "</td>" +"<td>" + drug.expirydate + "</td>" + "<td>" + drug.company + "</td>" + "<td>" + "<button class='btn btn-primary delete-btn'>Delete" + "</button>" + "</td>" + "</tr>"
+            render += "<tr>" + "<td>" + drug.drugid + "</td>" + "<td>" + drug.drugname + "</td>" + "<td>" + drug.drugtype + "</td>" + "<td>" + drug.route + "</td>" + "<td>" + drug.productiondate + "</td>" +"<td>" + drug.date + "</td>" + "<td>" + drug.company + "</td>" + "<td>" + "<button class='btn btn-primary delete-btn'>Delete" + "</button>" + "</td>" + "</tr>"
 
             });
             const divdisplay = document.getElementById('displayingdrugs')
