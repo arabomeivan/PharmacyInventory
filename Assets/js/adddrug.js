@@ -6,9 +6,15 @@ let drugs = []
 
 /**objects being used */
 let drugdetails = {}
+let systemidfordrug
 
 /**when button is clicked verification and validation is done */
 add.addEventListener('click', (e) => {
+    
+    /**generates a string of 6 random numbers, converts them to strings, 
+     * and display starting the 2nd index of javascript precision(which is 16) */
+    systemidfordrug = Math.random().toString(16).substring(2,8)
+
 
     /**getting values from all textfields for validation*/
     let id = document.getElementById('drugid').value
@@ -33,6 +39,7 @@ add.addEventListener('click', (e) => {
         drugdetails = {
 
             drugid: document.getElementById('drugid').value,
+            systemdrugid: systemidfordrug,
             drugname: document.getElementById('drugname').value,
             drugtype: document.getElementById('type').value,
             route: document.getElementById('route').value,
@@ -57,7 +64,7 @@ add.addEventListener('click', (e) => {
                 let found = false;
                  for(i=0; i< getdetails.length; i++)
                  {
-                    if (id == getdetails[i].drugid) 
+                    if (id == getdetails[i].drugid && systemidfordrug ===getdetails[i].systemdrugid) 
                     {
                         found = true;
                     }
@@ -84,7 +91,7 @@ add.addEventListener('click', (e) => {
                     /**Displays  */
                     let render = "";
                     drugs.forEach(drug => {
-                    render += "<tr>" + "<td>" + drug.drugid + "</td>" + "<td>" + drug.drugname + "</td>" + "<td>" + drug.drugtype + "</td>" + "<td>" + drug.route + "</td>" + "<td>" + drug.expirydate + "</td>" + "<td>" + drug.company + "</td>" + "<td>" + "<button class='btn btn-primary delete-btn'>Delete" + "</button>" + "</td>" + "</tr>"
+                    render += "<tr>" + "<td>" + drug.systemdrugid + "</td>" + "<td>" + drug.drugname + "</td>" + "<td>" + drug.drugtype + "</td>" + "<td>" + drug.route + "</td>" + "<td>" + drug.expirydate + "</td>" + "<td>" + drug.company + "</td>" + "<td>" + "<button class='btn btn-primary delete-btn'>Delete" + "</button>" + "</td>" + "</tr>"
 
                     });
                  }
@@ -110,7 +117,7 @@ add.addEventListener('click', (e) => {
                 /**Displays  */
                 let render = "";
                 drugs.forEach(drug => {
-                render += "<tr>" + "<td>" + drug.drugid + "</td>" + "<td>" + drug.drugname + "</td>" + "<td>" + drug.drugtype + "</td>" + "<td>" + drug.route + "</td>" + "<td>" + drug.expirydate + "</td>" + "<td>" + drug.company + "</td>" + "<td>" + "<button class='btn btn-primary delete-btn'>Delete" + "</button>" + "</td>" + "</tr>"
+                render += "<tr>" + "<td>" + drug.systemdrugid + "</td>" + "<td>" + drug.drugname + "</td>" + "<td>" + drug.drugtype + "</td>" + "<td>" + drug.route + "</td>" + "<td>" + drug.expirydate + "</td>" + "<td>" + drug.company + "</td>" + "<td>" + "<button class='btn btn-primary delete-btn'>Delete" + "</button>" + "</td>" + "</tr>"
 
                 });
 
@@ -118,7 +125,7 @@ add.addEventListener('click', (e) => {
 
             let render = "";
             drugs.forEach(drug => {
-            render += "<tr>" + "<td>" + drug.drugid + "</td>" + "<td>" + drug.drugname + "</td>" + "<td>" + drug.drugtype + "</td>" + "<td>" + drug.route + "</td>" + "<td>" + drug.productiondate + "</td>" +"<td>" + drug.date + "</td>" + "<td>" + drug.company + "</td>" + "<td>" + "<button class='btn btn-primary delete-btn'>Delete" + "</button>" + "</td>" + "</tr>"
+            render += "<tr>" + "<td>" + drug.systemdrugid + "</td>" + "<td>" + drug.drugname + "</td>" + "<td>" + drug.drugtype + "</td>" + "<td>" + drug.route + "</td>" + "<td>" + drug.productiondate + "</td>" +"<td>" + drug.date + "</td>" + "<td>" + drug.company + "</td>" + "<td>" + "<button class='btn btn-primary delete-btn'>Delete" + "</button>" + "</td>" + "</tr>"
 
             });
             const divdisplay = document.getElementById('displayingdrugs')

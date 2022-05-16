@@ -1,8 +1,8 @@
 
 # Index Page Workflow
 In this HTML file, the user can perform 4 functionalities: add, delete, display, and modify.
+The system also checks for validation generates and assigns a random id for the drug being added to storage
 
 # Dispatch Page Workflow
-Here, the user inputs the drug Id needed for dispatch. Meanwhile, in another component, the cart increments specifying the number of drugs to be dispatched, and after the button is clicked, those drugs are removed from the storage.
+Here, the user inputs the drug Id needed for dispatch and reduces the stock in the storage based on the stock left if stock is = 0 then drug can't be dispatched
 
-To display the drugs available after dispatch, on this page the list of drugs available will be returned alongside the total left.
