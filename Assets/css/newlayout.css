@@ -1,0 +1,65 @@
+.container-fluid
+{
+    height: auto;
+}
+
+body
+{
+    width: 100%;
+}
+
+/*style for the header*/
+.header
+{
+    width: 80%;
+    margin-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*making card for the form less wider and placing it in the middle of the column*/
+.text-center
+{
+    margin-top: 5%;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*style for the button*/
+.addbtn
+{
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*adding style to panel for displayin drugs*/
+/*making width auto so table width won't exceed the d*/
+.panel
+{
+    width: auto;
+}
+.table
+{
+    margin-top: 2%;
+    width: 90%;
+    font-size: large;
+}
+
+@media screen and (max-width: 600px) 
+{
+    .text-center
+    {
+         width: fit-content;
+    }
+
+    .table
+    {
+        margin-top: 10%;
+        width: 90%;
+        font-size: medium; 
+    }
+
+    
+}
