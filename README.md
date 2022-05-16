@@ -3,7 +3,7 @@ A JavaScript application that helps a pharmacy to take inventory of drugs entry 
  
 # Functionality
 ***
-The application's aim is to allow users to input data(drug details), display data(drug details) when needed, and modify it.
+The application's aim is to follow the CRUD policy (Create Read Update and Delete) allow users to input data(drug details), display data(drug details) when needed, and modify it.
 ***
 In terms of dispatching drugs, the user inputs the drug id placed for delivery to patients.
 ***
