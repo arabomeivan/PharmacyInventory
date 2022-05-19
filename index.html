@@ -106,7 +106,7 @@
                                         <div class="row mb-3">
                                             <div class="input-group mb-4">
                                                 <i class="bi bi-calendar-date input-group-text"></i>
-                                                <input type="text" id="productiondate" class="datepicker_input form-control" placeholder="Production Date" required aria-label="Production Date">
+                                                <input type="date" id="productiondate" class="datepicker_input form-control" placeholder="Production Date" required aria-label="Production Date">
                                               </div>
                                         </div>
                                               
@@ -114,7 +114,7 @@
                                             <div class="row mb-3">
                                                <div class="input-group mb-4">
                                                 <i class="bi bi-calendar-date input-group-text"></i>
-                                                <input type="text" id="expirydate" class="datepicker_input form-control" placeholder="Expriy Date" required aria-label="Expriy Date">
+                                                <input type="date" id="expirydate" class="datepicker_input form-control" placeholder="Expriy Date" required aria-label="Expriy Date">
                                               </div>
                                             </div>
 
@@ -192,32 +192,5 @@
 
 <!-- Javascript -->
 <script src="Assets/js/adddrug.js"></script>
-<!-- Vanilla Datepicker JS -->
-<script src='https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.4/dist/js/datepicker-full.min.js'></script>
-
-<script>
-/* Bootstrap 5 JS included */
-/* vanillajs-datepicker 1.1.4 JS included */
-
-const getDatePickerTitle = elem => {
-// From the label or the aria-label
-const label = elem.nextElementSibling;
-let titleText = '';
-if (label && label.tagName === 'LABEL') {
-titleText = label.textContent;
-} else {
-titleText = elem.getAttribute('aria-label') || '';
-}
-return titleText;
-}
-
-const elems = document.querySelectorAll('.datepicker_input');
-for (const elem of elems) {
-const datepicker = new Datepicker(elem, {
-'format': 'dd/mm/yyyy', // UK format
-title: getDatePickerTitle(elem)
-});
-}      
-</script>
     </body>
 </html>
